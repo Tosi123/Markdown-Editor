@@ -1,0 +1,11 @@
+<div class="jumbotron">
+    <h1 class="display-4">미디어 업로드</h1>
+    <form action="{% url "media" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ media_form.media }}
+            {{ media_form.as_p }}
+        </div>
+        <input type="submit" value="업로드" class="btn btn-primary" />
+    </form>
+</div>

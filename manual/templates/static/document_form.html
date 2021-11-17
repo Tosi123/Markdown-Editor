@@ -1,0 +1,26 @@
+<div class="jumbotron">
+    <h1 class="display-4">매뉴얼 작성</h1>
+    <form action="{% url "document" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group col-md-3">
+            <label for="exampleFormControlSelect1">카테고리 선택</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="category">
+                <option selected>None</option>
+                {% if categorys %}
+                {% for category in categorys %}
+                {% if category.parent_key == '' %}
+                <option value={{ category.key }}>{{ category.title }}</option>
+                {% else %}
+                <option value={{ category.key }}>{{ category.parent_title }} >> {{ category.title }}</option>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+        <div class="form-group">
+            {{ form.media }}
+            {{ form.as_p }}
+        </div>
+        <input type="submit" value="작성하기" class="btn btn-primary" />
+    </form>
+</div>

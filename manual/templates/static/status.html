@@ -1,0 +1,14 @@
+{% if messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>상태창</strong>
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>Level={{ message.tags }} Msg={{ message }}
+            </li>
+            {% endfor %}
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {% include "static/head.html" %}
+    <title>File Uploads</title>
+</head>
+
+<body>
+    {% include "static/bootstrap.html" %}
+    {% include "static/status.html" %}
+    <div class="jumbotron">
+        <h1 class="display-4">매뉴얼 관리 페이지</h1>
+        <p class="lead">이미지 첨부 md 파일 첨부 등 가능 합니다.</p>
+        <hr class="my-4">
+    </div>
+    {% include "static/category_list.html" %}
+    {% include "static/document_list.html" %}
+    {% include "static/media_list.html" %}
+    {% include "static/category_form.html" %}
+    {% include "static/document_form.html" %}
+    {% include "static/media_form.html" %}
+</body>
+</html>

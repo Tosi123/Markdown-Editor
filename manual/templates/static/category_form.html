@@ -1,0 +1,24 @@
+<div class="jumbotron">
+    <h1 class="display-4">카테고리 생성</h1>
+    <form action="{% url "category" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group col-md-3">
+            <label for="exampleFormControlSelect1">상위 카테고리</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="parent">
+                <option value='none' selected>None</option>
+                {% if categorys %}
+                {% for category in categorys %}
+                    {% if category.parent_key == '' %}
+                        <option value={{ category.key }}>{{ category.title }}</option>
+                    {% endif %}
+                {% endfor %}
+                {% endif %}
+            </select>
+        </div>
+        <div class="form-group">
+            {{ cat_form.media }}
+            {{ cat_form.as_p }}
+        </div>
+        <input type="submit" value="생성하기" class="btn btn-primary" />
+    </form>
+</div>

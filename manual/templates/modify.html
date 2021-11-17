@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {% include "static/head.html" %}
+    <title>File Modify</title>
+</head>
+
+<body>
+    {% include "static/bootstrap.html" %}
+    {% include "static/status.html" %}
+    <div class="jumbotron">
+        <h1 class="display-4">매뉴얼 수정 페이지</h1>
+        <p class="lead">매뉴얼 수정 가능 합니다.</p>
+        <hr class="my-4">
+        <a href="{% url "main" %}">돌아가기</a>
+    </div>
+    {% include "static/document_modify.html" %}
+</body>
+</html>
